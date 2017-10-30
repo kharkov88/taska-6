@@ -1,7 +1,7 @@
 export let Api = (function(){
-    const url="http://localhost:5000/get-data"
-    const url_add="http://localhost:5000/add"
-    const url_delete="http://localhost:5000/delete"
+    const url="/get-data"
+    const url_add="/add"
+    const url_delete="/delete"
 
     let list = ()=>
     fetch(url,{})
