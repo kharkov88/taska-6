@@ -33,5 +33,8 @@
     "babel-preset-react": "^6.3.13",
     "extract-text-webpack-plugin": "^2.1.2"
   },
-  "scripts": {}
+  "scripts": {
+    "build":"webpack",
+    "start-server":"node server.js"
+  }
 }
