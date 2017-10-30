@@ -58,7 +58,7 @@ app.post('/delete',jsonParse,(req,res)=>{
     })
 })
 
-let port = process.env.PORT || 5002;
+let port = process.env.PORT || 5000;
 server.listen(port);
 console.log(
     'Express-сервер прослушивает порт %d в режиме %s',
