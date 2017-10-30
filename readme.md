@@ -1,3 +1,3 @@
 1 npm i <br>
-2 webpack<br> 
-3 node server.js<br>
+2 npm run build<br> 
+3 npm run start-server<br>
