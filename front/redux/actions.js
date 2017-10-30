@@ -11,6 +11,21 @@ export function updateList(list){
         list
     }
 }
+const UPDATE_ITEM = "UPDATE_ITEM" 
+export function updateItem(item){
+    return {
+        type:UPDATE_ITEM,
+        payload:item
+    }
+}
+const CHANGE = "CHANGE"
+export function change(item){
+    return {
+        type:CHANGE,
+        payload:item
+    }
+
+}
 const GET_ACTIVE_ITEM = 'GET_ACTIVE_ITEM' // при выборе продукта запомнить выбранный id
 export function getActiveItem(id){
     return {

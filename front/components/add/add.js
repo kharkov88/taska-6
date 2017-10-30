@@ -8,8 +8,8 @@ const SimpleForm = props => {
   return (
     <form className="form" onSubmit={handleSubmit}>
     <div>
-      <div>
-        <Label color='yellow'>Название:</Label>
+      <div className="form-row">
+        <Label >Название:</Label>
         <div>
         <Input>
             <Field
@@ -21,8 +21,8 @@ const SimpleForm = props => {
         </Input>    
         </div>
       </div>
-      <div>
-      <Label color='yellow'>Автор:</Label>
+      <div className="form-row">
+      <Label >Автор:</Label>
         <div>
         <Input>
           <Field
@@ -34,8 +34,8 @@ const SimpleForm = props => {
         </Input>
         </div>
       </div>
-      <div>
-      <Label color='yellow'>Год издания:</Label>
+      <div className="form-row">
+      <Label >Год издания:</Label>
         <div>
         <Input>
           <Field
@@ -47,8 +47,8 @@ const SimpleForm = props => {
         </Input>
         </div>
       </div>
-      <div>
-      <Label color='yellow'>src image:</Label>
+      <div className="form-row">
+      <Label >src image:</Label>
         <div>
         <Input>
           <Field
@@ -63,15 +63,15 @@ const SimpleForm = props => {
     </div>
 
     <div> 
-      <div>
-        <Label color='yellow'>Краткое описание:</Label>
+      <div className="form-row">
+        <Label >Краткое описание:</Label>
         <div>
           <Field name="except" component="textarea"  rows="3" cols="45"/>
         </div>
       </div>
 
-      <div>
-        <Label color='yellow'>Описание:</Label>
+      <div className="form-row">
+        <Label >Описание:</Label>
         <div>
           <Field name="content" component="textarea"  rows="8" cols="45"/>
         </div>

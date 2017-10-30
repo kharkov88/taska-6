@@ -4,12 +4,17 @@ import {Link} from "react-router-dom"
 import Form from "../change/change"
 import {Api} from "../../redux/api"
 
-export const ModalWindow = ({item}) => (
-  <Modal trigger={<Button>Редактировать</Button>}>
+export const ModalWindow = ({item,actions,updateItem}) => (
+  <Modal trigger={<Button onClick={()=>actions.change(item)}>Редактировать</Button>}>
     <Modal.Header>Изменить</Modal.Header>
     <Modal.Content image>
       <Modal.Description>
-        <Form item={item}/>
+        <Form 
+        item={item}
+        change={actions.change}
+        onSubmit={updateItem}
+        
+        />
       </Modal.Description>
     </Modal.Content>
     <Modal.Actions>
@@ -37,6 +42,5 @@ export const ModalBasic = (props) => (
 function remove(props){
   let {id,update} = props
   let callback = Api.remove
-  console.log(callback)
   callback(id).then(()=>update())
 }

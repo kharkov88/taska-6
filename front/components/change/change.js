@@ -1,15 +1,26 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 import { Input , Label} from 'semantic-ui-react'
+import {connect} from 'react-redux'
 import "./change.css"
+import {change as changeForm} from "../../redux/actions"
 
-const SimpleForm = props => {
-  const { handleSubmit, pristine, reset, submitting, item } = props
+class SimpleForm extends React.Component {
+  constructor(){
+    super()
+    //this.handleSubmit = this.handleSubmit.bind(this)
+  }
+  // handleSubmit(values){
+  //   let {updateItem} = this.props
+  //   updateItem(values)
+  // }
+  render(){
+  const {  handleSubmit,pristine, reset, submitting, change } = this.props
   return (
-    <form className="formChange" onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
     <div>
-      <div>
-        <Label color='yellow'>Название:</Label>
+      <div className="form-row">
+        <Label >Название:</Label>
         <div>
         <Input>
             <Field
@@ -17,13 +28,12 @@ const SimpleForm = props => {
             component="input"
             type="text"
             placeholder="Название книги"
-            value="item.name"
             />
         </Input>    
         </div>
       </div>
-      <div>
-      <Label color='yellow'>Автор:</Label>
+      <div className="form-row">
+      <Label >Автор:</Label>
         <div>
         <Input>
           <Field
@@ -35,8 +45,8 @@ const SimpleForm = props => {
         </Input>
         </div>
       </div>
-      <div>
-      <Label color='yellow'>Год издания:</Label>
+      <div className="form-row">
+      <Label >Год издания:</Label>
         <div>
         <Input>
           <Field
@@ -48,8 +58,8 @@ const SimpleForm = props => {
         </Input>
         </div>
       </div>
-      <div>
-      <Label color='yellow'>src image:</Label>
+      <div className="form-row">
+      <Label >src image:</Label>
         <div>
         <Input>
           <Field
@@ -64,15 +74,15 @@ const SimpleForm = props => {
     </div>
 
     <div> 
-      <div>
-        <Label color='yellow'>Краткое описание:</Label>
+      <div className="form-row">
+        <Label >Краткое описание:</Label>
         <div>
           <Field name="except" component="textarea"  rows="3" cols="45"/>
         </div>
       </div>
 
-      <div>
-        <Label color='yellow'>Описание:</Label>
+      <div className="form-row">
+        <Label >Описание:</Label>
         <div>
           <Field name="content" component="textarea"  rows="8" cols="45"/>
         </div>
@@ -89,7 +99,17 @@ const SimpleForm = props => {
     </form>
   )
 }
+}
 
-export default reduxForm({
-  form: 'changeForm' // a unique identifier for this form
-})(SimpleForm)
+SimpleForm = reduxForm({
+  form: 'initializeFromState', // a unique identifier for this form
+})(SimpleForm);
+
+SimpleForm = connect(
+  state => ({
+    initialValues: state.changing, // pull initial values from account reducer
+  }),
+  { change: changeForm }, // bind account loading action creator
+)(SimpleForm);
+
+export default SimpleForm;

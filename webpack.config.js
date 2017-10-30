@@ -33,17 +33,17 @@ module: {
     ]
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-       NODE_ENV: '"production"',
-      },
-      __DEVELOPMENT__: true,
-    }),
+    // new webpack.DefinePlugin({
+    //   'process.env': {
+    //    NODE_ENV: '"production"',
+    //   },
+    //   __DEVELOPMENT__: true,
+    // }),
     new ExtractTextPlugin("css/style.css"),
-    new UglifyJSPlugin({
-      compress:{
-        warnings:false
-      }
-    })
+    // new UglifyJSPlugin({
+    //   compress:{
+    //     warnings:false
+    //   }
+    // })
   ]
 };
