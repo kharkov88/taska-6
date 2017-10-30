@@ -15,7 +15,7 @@ export let Content = ({activeID,list,actions})=>{
     });
     return(
         <div className="content">
-            <Route exact path="/" component={()=><p>About</p>}/>
+            <Route exact path="/" component={About}/>
             <Route exact path={`/магазин`} component={(match)=><List match={match} list={list} actions={actions}/>}/>
             <Route path={`/магазин/:productId`} component={(match)=><Product match={match} list={list} activeID={activeID} actions={actions}/>}/>
             <Route path={`/добавить`} component={()=><ReduxForm onSubmit={showResults} />}/>
@@ -39,5 +39,8 @@ export let Content = ({activeID,list,actions})=>{
       )
     }
       
+const About = ()=>(
+    <p>Жми магазин и выбирай продукт :)</p>
+)
 
     
