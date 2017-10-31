@@ -29,8 +29,9 @@ app.post('/add',jsonParse,(req,res)=>{
         if(error)console.log('error:',error)
         else{
             let obj = JSON.parse(data)
+            let count = obj.products.length
             obj.products.push({
-                id:String(obj.products.length),
+                id:String(+(obj.products[count-1].id)+1),
                 name:req.body.name,
                 author:req.body.author,
                 year:req.body.year,
