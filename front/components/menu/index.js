@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Menu} from 'semantic-ui-react';
 import {Link} from 'react-router-dom'
 
-export default class MainMenu extends Component {
+export default class extends Component {
     constructor(){
         super()
         this.state = {}

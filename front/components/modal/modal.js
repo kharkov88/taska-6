@@ -1,7 +1,8 @@
 import React from 'react'
 import { Button, Header, Icon, Image, Modal } from 'semantic-ui-react'
 import {Link} from "react-router-dom"
-import Form from "../change/change"
+
+import Form from "../change"
 import {Api} from "../../redux/api"
 
 export const ModalWindow = ({item,actions,updateItem}) => (

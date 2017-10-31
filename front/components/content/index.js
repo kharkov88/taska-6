@@ -1,12 +1,13 @@
 import React from 'react';
-import List from "../list/list"
 import {Route} from "react-router-dom";
+
 import "./content.css"
 import {ModalWindow,ModalBasic} from "../modal"
-import ReduxForm from "../add/add"
+import ReduxForm from "../add"
+import List from "../list"
 import {Api} from "../../redux/api"
 
-export let Content = ({activeID,list,actions})=>{
+export default  ({activeID,list,actions})=>{
     const {addItem} = actions 
     let showResults =  function (values) {
         Api.add(values).then(()=>actions.getList())

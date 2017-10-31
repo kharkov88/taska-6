@@ -5,11 +5,11 @@ import {bindActionCreators} from'redux'
 import * as actions from '../redux/actions'
 import './App.css';
 import {Api} from "../redux/api"
-import Menu from "./menu/menu"
-import {Content} from "./content/content"
+import Menu from "./menu"
+import Content from "./content"
 import {BrowserRouter as Router,Link,Route} from "react-router-dom";
 
-class _App extends Component {
+class App extends Component {
   componentDidMount(){
     this.props.actions.getList()
   }
@@ -38,8 +38,7 @@ const mapStateToProps = function (store){
   }
 }
 
-let App = connect(
+export default App = connect(
   mapStateToProps,
   mapDispatchToProps
-)(_App)
-export default App;
+)(App)
