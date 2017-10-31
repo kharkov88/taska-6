@@ -6,6 +6,9 @@
 # testing
 /coverage
 
+# mock
+/back
+
 # misc
 .DS_Store
 .env.local
